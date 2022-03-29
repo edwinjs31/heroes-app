@@ -1,9 +1,11 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { AppRouter } from './routers/AppRouter'
 
 export const HeroesApp = () => {
-  return (
-    <div>
-        <h1>Heroes App</h1>
-    </div>
-  )
+    return (
+        <BrowserRouter>
+            <AppRouter />
+        </BrowserRouter>
+    )
 }
