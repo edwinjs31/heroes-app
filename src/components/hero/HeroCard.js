@@ -14,10 +14,10 @@ export const HeroCard = ({
     const imagePath = `/assets/img/${id}.jpg`;
     
     return (
-        <div className="col">
+        <div className="row g-2 mx-1">
             <div className="card">
                 <div className="row no-gutters">
-                    <div className="col-4">
+                    <div className="col-4 animate__animated animate__rotateInUpLeft">
                         <img src={imagePath} alt={superhero} className="card-img" />
                     </div>
                     <div className="col-8">

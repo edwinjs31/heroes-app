@@ -32,13 +32,13 @@ export const HeroScreen = () => {
   return (
     <div className='row mt-5'>
 
-      <div className="col-4">
+      <div className="col-4 animate__animated animate__fadeInLeft">
         <img src={imagePath} alt={superhero} className="img-thumbnail" />
       </div>
 
       <div className="col-8">
 
-        <h3>{superhero}</h3>
+        <h3 className="animate__animated animate__fadeInDown">{superhero}</h3>
 
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
@@ -55,7 +55,7 @@ export const HeroScreen = () => {
         <h5 className='mt-3'>Characters</h5>
         <p>{characters}</p>
 
-        <button className='btn btn-outline-dark' onClick={hangleReturn}>Regresar</button>
+        <button className='btn btn-outline-dark animate__animated animate__swing' onClick={hangleReturn}>Regresar</button>
       </div>
 
     </div>
