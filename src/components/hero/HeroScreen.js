@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Navigate, useParams, useNavigate } from 'react-router-dom'
 import { getHeroesById } from '../../helpers/getHeroById';
 
@@ -9,8 +9,8 @@ export const HeroScreen = () => {
   //desestructurando accedemos al id del heroe(heroeId está definida en DashBoardRouter )
   const { heroeId } = useParams();
 
-  //ahora llamamos la funcion o helper que tenemos para buscar el heroe por id
-  const hero = getHeroesById(heroeId);
+  //llamamos al helper que tenemos para buscar el heroe por id,'memo' memorizará el rehore, cuando cambie el su id volverá a memorizar
+  const hero = useMemo(() => getHeroesById(heroeId), [heroeId]);
 
   //si el heroe no existe redirige a home
   if (!hero) {
