@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getHeroesByName } from '../../helpers/getHeroesByName';
 import { useForm } from '../../hooks/useForm'
@@ -14,6 +14,8 @@ export const SearchScreen = () => {
     //contiene un ubjeto con todos los atributos de la página actual,si no tien query se establece como bacio
     const { q = '' } = queryString.parse(location.search);
 
+
+
     //el initialState será q=nombre del heroe
     const [formValue, handleInputChange] = useForm({
         searchText: q,
@@ -21,7 +23,9 @@ export const SearchScreen = () => {
 
     const { searchText } = formValue;
 
-    const heroesFilter = getHeroesByName(q);
+    //useMemo memoriza el retorno(heroesFilter), si cambia la dependenci(q) vuleve a memorizar
+    const heroesFilter = useMemo(() => getHeroesByName(q), [q]);
+
     // console.log(location);
     const handleSubmitSeach = (e) => {
         e.preventDefault();
@@ -56,9 +60,9 @@ export const SearchScreen = () => {
                     <h4>Resultados</h4>
                     <hr />
                     {
-                        (q==='') 
-                        ? <div className='alert alert-info'>Buscar un heroe</div>
-                        : (heroesFilter.length === 0) && <div className='alert alert-danger'>No hay resultados: {q}</div>
+                        (q === '')
+                            ? <div className='alert alert-info'>Buscar un heroe</div>
+                            : (heroesFilter.length === 0) && <div className='alert alert-danger'>No hay resultados: {q}</div>
                     }
 
                     {
