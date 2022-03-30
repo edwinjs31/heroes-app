@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+//COMPONENTE CARD DE CADA IMAGEN IMAGEN
+//======================================================
+
 //desestructuramos el heroe directamente(props)
 export const HeroCard = ({
     id,

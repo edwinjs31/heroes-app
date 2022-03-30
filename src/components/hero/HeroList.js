@@ -2,6 +2,9 @@ import React, { useMemo } from 'react'
 import { getHeroesByPublisher } from '../../helpers/getHeroesByPublisher'
 import { HeroCard } from './HeroCard';
 
+//COMPONENTE ENCARGADO DE LISTAR HEROES Y TIENE EL COMPONENETE 'HeroCard'
+//=========================================================================
+
 export const HeroList = ({ publisher }) => {
 
     //momoriza los heroes(si no tubieramos el publisher como dependencia seria un array vacio)

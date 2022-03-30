@@ -2,6 +2,9 @@ import React, { useMemo } from 'react'
 import { Navigate, useParams, useNavigate } from 'react-router-dom'
 import { getHeroesById } from '../../helpers/getHeroById';
 
+//COMPONENTE ENCARGADO DE LA DESCRIPCION DE LOS HEROES
+//=====================================================
+
 export const HeroScreen = () => {
   const navegate = useNavigate();
 
