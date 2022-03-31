@@ -6,8 +6,10 @@ import { types } from "../../types/types";
 
 export const LoginScreen = () => {
     const { dispatch } = useContext(AuthContext);
-    const navigate = useNavigate();
+
     //'navigate' permite redirecionar una vez logueado, con 'replace', no pueva volver a la ruta anterior
+    const navigate = useNavigate();
+
     const handleLogin = () => {
         //enviamos la accion dentro del dispatch
         dispatch({
@@ -15,8 +17,12 @@ export const LoginScreen = () => {
             payload: { name: 'Edwin' }
         });
 
-        //redireccionamos
-        navigate('/', { replace: true });
+        //para recuperar el ultimo path de localstorange, si no existe empezar en el home.
+        const lastPath = localStorage.getItem('lastPath') || '/';
+
+        //redireccionamos al correspondiente path
+        // navigate('/', { replace: true });
+        navigate(lastPath, { replace: true });
     };
 
     return (
