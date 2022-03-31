@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth/authContext';
+import { types } from "../../types/types";
+
 
 export const LoginScreen = () => {
-
-    const navigate= useNavigate();
+    const { dispatch } = useContext(AuthContext);
+    const navigate = useNavigate();
     //'navigate' permite redirecionar una vez logueado, con 'replace', no pueva volver a la ruta anterior
-    const handleLogin = () => navigate('/',{replace: true});
+    const handleLogin = () => {
+        //enviamos la accion dentro del dispatch
+        dispatch({
+            type: types.login,
+            payload: { name: 'Edwin' }
+        });
+
+        //redireccionamos
+        navigate('/', { replace: true });
+    };
+
     return (
-        <div>
+        <div className='container'>
             <h1>Login</h1>
             <hr />
 

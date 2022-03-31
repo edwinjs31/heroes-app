@@ -33,32 +33,30 @@ export const HeroScreen = () => {
   const hangleReturn = () => navegate(-1);
 
   return (
-    <div className='row mt-5'>
+    <div className='row mt-3'>
 
-      <div className="col-4 animate__animated animate__fadeInLeft">
+      <div className="col-sm-7 col-md-4 col-lg-4 col-xl-3  animate__animated animate__fadeInLeft">
         <img src={imagePath} alt={superhero} className="img-thumbnail" />
       </div>
 
       <div className="col-8">
-
         <h3 className="animate__animated animate__fadeInDown">{superhero}</h3>
-
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
-            <p>Alter ego: <b>{alter_ego}</b></p>
+            <p><b>Alter ego:</b> {alter_ego}</p>
           </li>
           <li className="list-group-item">
-            <p>Publisher: <b>{publisher}</b></p>
+            <p><b>Publisher:</b> {publisher}</p>
           </li>
           <li className="list-group-item">
-            <p>First Appearance: <b>{first_appearance}</b></p>
+            <p><b>First Appearance:</b> {first_appearance}</p>
           </li>
         </ul>
 
-        <h5 className='mt-3'>Characters</h5>
+        <h5 className='mt-1'>Characters</h5>
         <p>{characters}</p>
 
-        <button className='btn btn-outline-dark animate__animated animate__swing' onClick={hangleReturn}>Regresar</button>
+        <button className='btn btn-outline-success mb-2 animate__animated animate__swing' onClick={hangleReturn}>Regresar</button>
       </div>
 
     </div>

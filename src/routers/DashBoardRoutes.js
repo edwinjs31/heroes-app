@@ -1,4 +1,4 @@
-//2º ROUTER QUE MANEJA LAS RUTAS YA UNA VEZ INICIADO SECION 
+//2º ROUTER(PRINCIPAL) QUE MANEJA LAS RUTAS YA UNA VEZ INICIADO SECION 
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { DcScreen } from '../components/dc/DcScreen'
